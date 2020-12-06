@@ -4,7 +4,7 @@
 
 
 ### 1) Full Port Scan
-	> Command: "nmap [IP] -p- -sV [-A]"
+> Command: "nmap [IP] -p- -sV [-A]"
 	What ports to look for:
 		21	 - FTP
 		22	 - SSH
