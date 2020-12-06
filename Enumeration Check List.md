@@ -4,15 +4,31 @@
 
 
 ### 1) Full Port Scan
-> Command: "nmap [IP] -p- -sV [-A]"
-	What ports to look for:
-		21	 - FTP
-		22	 - SSH
-		23	 - Telnet 
-		25	 - SMTP 	(Mail Server)
-		69   - TFTP		(FTP Server using UDP)
-		80	 - HTTP 	
-		110  - POP3		(Mail Server)
-		139  - SMB 		(Shring files, printes etc.)
-		443  - HTTPS
-		445  - SMB		(SMB over IP)
+#### Commands:
+* "nmap [IP] -p- -sV -A"
+#### Information:
+What to look out for:
+Port | Service | Example
+------------ | ------------- | -------------
+21 | FTP | vsftpd
+22 | SSH | OpenSSH
+23 | Telnet | Unencrypted command-line
+25 | SMTP | Mail Server
+69 | TFTP | FTP server using UDP
+80 | HTTP | Apache
+110 | POP3 | Mail Server
+139 | SMB | Sharing files, printers, etc.
+443 | HTTPS | Encrypted HTTP
+445 | SMB | SMB over IP
+
+### 2) Vulnerability Scans
+#### Commands:
+* nmap -sV --script=vulscan/vulscan.nse [IP]
+* nikto -host [IP] -p [minPort],[maxPort] -maxtime [seconds]
+
+### 2) Web Server Directory Scan
+#### Commands:
+* gobuster dir -w [wordlist] -u [URL]
+#### Information:
+Good word lists:
+* /usr/share/wordlist
