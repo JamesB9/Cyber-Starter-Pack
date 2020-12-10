@@ -1,4 +1,4 @@
-# Scoping Check List
+# Reconnaissance Check List
 ## Author: JamesB9
 ## Description: 
 A list of steps I carry out before I have a shell on the target machine.
