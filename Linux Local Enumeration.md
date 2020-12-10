@@ -1,6 +1,8 @@
 # Linux Local Enumeration Check List
 ## Author: JamesB9
-## Description: A list of steps I carry out once I have a basic shell on the target machine
+## Description: 
+A list of steps I carry out once I have a basic shell on the target machine. I was able to create this list using information and resources provided from https://tryhackme.com/room/lle and https://gtfobins.github.io/
+
 
 ### Find id_rsa
 id_rsa is a file containing the SSH private key for a user to use to sign into the machine via ssh without a password
@@ -39,7 +41,7 @@ Commands for this:
 Check /etc/passwd to see if you can read and/or write to it. Writing to it allows easy escalation to root priviledges as you can just add a new line (new user) with root priviledges.
 The format of a line in this file is as follows:
 
-goldfish:x:1003:1003:,,,:/home/goldfish:/bin/bash
+    goldfish:x:1003:1003:,,,:/home/goldfish:/bin/bash
 
 1. (goldfish) - Username
 2. (x) - Password. (x character indicates that an encrypted account password is stored in /etc/shadow file and cannot be displayed in the plain text here)
@@ -53,7 +55,7 @@ goldfish:x:1003:1003:,,,:/home/goldfish:/bin/bash
 Check /etc/shadow to see if you can read and/or write to it. This file stores all password hashes for the users of the machine. Once you have these, you may be able to decypher and brute-force them.
 The format of a line in this file is as follows:
 
-goldfish:$6$1FiLdnFwTwNWAqYN$WAdBGfhpwSA4y5CHGO0F2eeJpfMJAMWf6MHg7pHGaHKmrkeYdVN7fD.AQ9nptLkN7JYvJyQrfMcfmCHK34S.a/:18483:0:99999:7:::
+    goldfish:$6$1FiLdnFwTwNWAqYN$WAdBGfhpwSA4y5CHGO0F2eeJpfMJAMWf6MHg7pHGaHKmrkeYdVN7fD.AQ9nptLkN7JYvJyQrfMcfmCHK34S.a/:18483:0:99999:7:::
 
 1. (goldfish) - Username
 2. ($6$1FiLdnFwT...) - Password : Encrypted password.
