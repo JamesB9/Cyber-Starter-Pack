@@ -16,3 +16,4 @@
 		139  - SMB 		(Shring files, printes etc.)
 		443  - HTTPS
 		445  - SMB		(SMB over IP)
+		
