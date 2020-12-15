@@ -13,6 +13,7 @@ What ports to look for:
 	22	 - SSH
 	23	 - Telnet 
 	25	 - SMTP 	(Mail Server)
+	53   - DNS
 	69   - TFTP		(FTP Server using UDP)
 	80	 - HTTP 	
 	110  - POP3		(Mail Server)
@@ -23,4 +24,10 @@ What ports to look for:
 ### Nikto Vulnerability Scan
 
 	nikto -host [IP]
+	
+### SQLMap
+
+	sqlmap -u [URL] --batch --forms --dump
+
+If you find a form on a web server, use the above command to automatically try and exploit SQLi and dump database contents.
 
